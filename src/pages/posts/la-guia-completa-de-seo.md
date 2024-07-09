@@ -6,8 +6,8 @@ pubDate: 2024-03-26
 description: 'De que vale tener una excelente web si no la puedes posicionar en el Gigante Google.'
 author: 'JotaDev'
 image:
-    url: 'hhttps://ucarecdn.com/6bec1f1f-694a-4836-9cb5-d17e9c25ffbd/-/preview/1000x1000/f'
-    alt: 'Guia de seo'
+    url: 'https://ucarecdn.com/32db7aa8-f1f5-41e2-bf4e-fcfeeaad7b45/-/preview/1000x750/'
+    alt: 'Guia de seo por JotaDev'
 tags: ["html","javascript", "css", "seo","dev"]
 ---
 
@@ -27,7 +27,7 @@ Si estas aquí es por qué quieres mejorar el alcance de tu Web y así mas usuar
 
 Las propiedades ARIA (Accessible Rich Internet Applications) se utilizan para mejorar la accesibilidad de las páginas web para personas con discapacidades, especialmente para usuarios de lectores de pantalla y tecnologías de asistencia. Estas propiedades proporcionan información adicional sobre el contenido y el comportamiento de los elementos HTML, permitiendo que las personas con discapacidades comprendan mejor la página web y la interactúen de manera efectiva.
 
-`role`: Define el rol semántico de un elemento HTML. Por ejemplo, un botón puede tener el rol button, un menú puede tener el rol menú, etc.
+**`role`**: Define el rol semántico de un elemento HTML. Por ejemplo, un botón puede tener el rol button, un menú puede tener el rol menú, etc.
 
 **`aria-roledescription`**: Proporciona una descripción más detallada del rol del elemento.
 
@@ -158,7 +158,7 @@ Las etiquetas Open Graph (OG) son un conjunto de metadatos que se agregan al có
 
 **`og:image`**: Define la imagen que se mostrará en las redes sociales.
 
-**`og:ur`**l: Define la URL de la página que se está compartiendo.
+**`og:url`**: Define la URL de la página que se está compartiendo.
 
 ```jsx
 

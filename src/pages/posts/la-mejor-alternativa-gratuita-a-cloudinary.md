@@ -6,7 +6,7 @@ as: "dev"
 description: 'UploadCare la alternativa con capa gratuita a Cloudinary y que deberias usar en 2024..'
 author: 'JotaDev'
 image:
-    url: 'https://ucarecdn.com/07d2c99a-3bef-46ad-8de2-99a4ed88b78c/5e1c21ba24e54556b234957080bc068e.avif'
+    url: 'https://ucarecdn.com/e76d50e8-5b49-48e0-9061-9a3674dc8ceb/-/preview/1000x750/'
     alt: 'Alternativas a Cloudinary.'
 tags: ["seo","capa gratuita", "dev"]
 ---

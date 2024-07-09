@@ -17,20 +17,20 @@ const allPosts = allPostsMD
     frontmatter: post.frontmatter,
     url: post.url,
   }))
-  .splice(0, 4) as FrontMatterGlob[];
+  .splice(0, 4).sort((a,b) => new Date(b.frontmatter.pubDate) - new Date(a.frontmatter.pubDate)) as FrontMatterGlob[];
 ---
 
 <Layout title="Mas que un codigo || JotaDev">
   <div class="main md:w-[52rem] md:px-0 px-4 w-full flex-col">
-    <header class="w-full flex flex-col h-[80vh]">
+    <header class="w-full flex flex-col h-[85vh] max-h-[500px] -mt-5">
       <div
-        class="w-full flex md:justify-between justify-center md:flex-row flex-col h-full items-center -mb-16 md:gap-0 gap-4"
+        class="w-full flex md:justify-between justify-center md:flex-row flex-col h-full items-center md:gap-0 gap-4"
       >
         <div
           class="md:max-w-[50%] max-w-max md:flex-auto md:text-left text-center md:order-1 order-2"
         >
           <h1
-            class="md:text-7xl text-6xl font-semibold dark:text-white text-black mb-3"
+            class="md:text-7xl text-6xl font-semibold dark:text-white text-black md:mb-3"
           >
             Jota
             <strong
@@ -54,7 +54,7 @@ const allPosts = allPostsMD
               </span>
             </span>
             <div
-              class="flex gap-1 mt-4 items-center md:justify-start justify-center"
+              class="flex gap-1 mt-1 items-center md:justify-start justify-center"
             >
               <Tag title="frontend" />
               <Tag title="backend" />
@@ -62,14 +62,14 @@ const allPosts = allPostsMD
             </div>
           </p>
         </div>
-        <div class="relative md:order-2 order-1 md:my-0 my-6">
+        <div class="relative md:order-2 order-1 md:my-2 my-6">
           <Logo classLogo="md:size-48 size-40 rotate-6 md:mr-8" />
           <Logo
             classLogo="md:size-48 size-40 rotate-6 md:mr-8 blur-2xl absolute inset-0 opacity-40 scale-120"
           />
         </div>
       </div>
-      <div class="flex justify-center gap-4 w-full pb-12">
+      <div class="flex justify-center gap-4 w-full pb-12 mt-5">
         <a
           target="_blank"
           href="https://github.com/Dsgnr-JM"

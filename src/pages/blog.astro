@@ -1,48 +1,91 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import type { FrontMatterGlob } from "../types";
-import Css from '../components/icons/Css.astro'
+import Css from "../components/icons/Css.astro";
 const allPostsMD = await Astro.glob("./posts/*.md");
-const allPosts: FrontMatterGlob[] = allPostsMD.map((post) => ({
+const allPosts = allPostsMD.map((post) => ({
   frontmatter: post.frontmatter,
   url: post.url,
-}));
-const skillColor = "navy";
+})).sort((a,b) => new Date(b.frontmatter.pubDate) - new Date(a.frontmatter.pubDate)) as FrontMatterGlob[];
 ---
 
-<Layout title="Articulos del Blog">
-  <a href="/">Inicio</a>
-  <a href="/about/">Sobre mi</a>
-  <a href="/blog/">Blog</a>
-
-  <h1 class="font-extrabold">Mi blog de aprendizaje sobre Astro</h1>
-  <p>Aquí es donde publicaré acerca de mi viaje aprendiendo Astro.</p>
-  <ul class="flex gap-2">
-    {
-      allPosts.map((post) => (
-        <a
-          href={post.url}
-          class="p-3 rounded border-2 border-gray-400/50 hover:border-sky-500 hover:text-sky-500 text-black"
+<Layout title="Articulos del Blog || JotaDev">
+  <section class="pb-4">
+    <main class="main md:w-[52rem] w-full md:px-0 px-2 flex-col">
+      <div class="w-full mb-8">
+        <h1
+          class="md:text-3xl text-2xl font-extrabold dark:text-white text-black capitalize"
         >
-          <h3 class="font-semibold">{post.frontmatter.title}</h3>
-          <p>{post.frontmatter.pubDate}</p>
-        </a>
-      ))
-    }
-  </ul>
+          Articulos de JotaDev
+        </h1>
+        <p
+          class="text-base dark:text-gray-50/85 text-gray-700/95 my-1 md:w-4/5 w-full"
+        >
+          Esta es la coleccion completa 😋 de todos los articulos relacionados,
+          escritos y publicados en el blog, si necesitas informacion pues aqui
+          la encontraras.
+        </p>
+      </div>
+      <div class="grid-articles">
+        {
+          allPosts.map(item => (
+            <a
+              id="post"
+              href={item.url}
+              class="flex flex-col justify-end gradient relative overflow-hidden dark:bg-white/5 bg-gray-300/30 p-4 rounded"
+            >
+                <img src={item.frontmatter.image.url} alt={item.frontmatter.image.alt} class="absolute top-0 left-0 object-cover h-full w-full -z-10"/>
+              <h2 class="text-black/90 dark:text-white/90 text-lg font-bold leading-5 mb-1 mt-2">{item.frontmatter.title}</h2>
+              <p class="text-gray-900/70 dark:text-gray-200/80 text-sm">{item.frontmatter.description}</p>
+            </a>
+          ))
+        }
+      </div>
+    </main>
+  </section>
 </Layout>
-<script is:inline define:vars={{ allPosts }}>
-  console.log(allPosts)
-</script>
 
-<style define:vars={{ skillColor }}>
-  h1 {
-    color: purple;
-    font-size: 4rem;
+<style>
+.gradient a{
+    box-shadow: inset 0 0 12px rgb(0 0 0 1);
+}
+.gradient{
+  @apply dark:bg-[linear-gradient(transparent,rgb(0_0_0_/_.9)_70%)] bg-[linear-gradient(transparent,rgb(255_255_255_/_.8)_100%)];
+}
+.gradient img{
+	transition:.3s ease;
+}
+.gradient:hover img{
+	rotate:5deg;
+	scale:1.2;
+}
+  .grid-articles{
+    width: 100%;
+    display: grid;
+    grid-template: 250px 250px 250px / 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap:.7rem;
   }
-  .skill {
-    color: green;
-    color: var(--skillColor);
-    font-weight: bold;
+  .grid-articles a:nth-child(1){
+    grid-column: span 4;
+  }
+  .grid-articles a:nth-child(2){
+    grid-column: span 2;
+  }
+  .grid-articles a:nth-child(3){
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  .grid-articles a:nth-child(4){
+    grid-column: span 3;
+    grid-row: 200px;
+  }
+  .grid-articles a:nth-child(5){
+    grid-column: span 1;
+  }
+  .grid-articles a:nth-child(6){
+    grid-column: span 2;
+  }
+  .grid-articles a:nth-child(7){
+    grid-column: span 2;
   }
 </style>
