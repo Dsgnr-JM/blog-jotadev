@@ -14,16 +14,16 @@ import Search from "./Search.astro"
           <Logo classLogo="h-8 mr-2" />
         </a>
         <span
-          class="dark:text-white/80 text-gray-900/80 font-bold tracking-wider md:block"
+          class="dark:text-white/80 text-gray-900/80 font-bold tracking-wider md:block md:visible invisible"
         >
           Jota Dev
         </span>
       </div>
       <div class="flex text-black/60 dark:text-white/90 items-center text-sm">
         <Search/>
-        <div class="w-full flex items-center relative">
+        <div class="w-full flex items-center relative gap-3">
           <div
-            class="md:static options md:visible invisible absolute md:bg-transparent md:dark:bg-transparent dark:bg-slate-700 bg-slate-200 rounded md:p-0 p-2 top-[200%] right-0 flex-1 flex md:flex-row flex-col md:items-center items-end transition gap-1"
+            class="md:static options md:visible invisible absolute md:bg-transparent md:dark:bg-transparent dark:bg-slate-700 bg-slate-200 rounded md:p-0 p-2 top-[200%] right-0 flex-1 flex md:flex-row flex-col md:items-center items-end transition"
           >
             <a
               id="navItem"
@@ -37,7 +37,7 @@ import Search from "./Search.astro"
             id="navItem"
               data-nav="challenges"
               href="/challenges"
-              class="py-1 px-2 rounded transition-all hover:dark:text-sky-400 hover:text-blue-500"
+              class="py-1 px-2 rounded transition-all hover:dark:text-sky-400 hover:text-blue-500 hidden"
               aria-label="Ir a la pestaña Challenges"
             >
               RetosDev
@@ -46,7 +46,7 @@ import Search from "./Search.astro"
             id="navItem"
               data-nav="leaderboard"
               href="/leaderboard"
-              class="py-1 px-2 rounded transition-all hover:dark:text-sky-400 hover:text-blue-500"
+              class="py-1 px-2 hidden rounded transition-all hover:dark:text-sky-400 hover:text-blue-500"
               aria-label="Ir a la pestaña LeaderBoard"
             >
               LeaderBoard

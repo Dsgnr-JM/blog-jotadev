@@ -10,7 +10,11 @@ export type FrontMatter = MarkdownLayoutProps<{
   title: string,
   pubDate: number,
   author: string,
-  as:string
+  as:string,
+  image: {
+      url: string,
+      alt: string
+    },
   description: string,
   tags: Tag[]
 }>
